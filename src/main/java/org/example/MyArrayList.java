@@ -4,7 +4,7 @@ import java.util.Arrays;
 import java.util.Comparator;
 
 public class MyArrayList <T>  {
-    private Object[] array;
+    Object[] array;
     private int size;
     private static final int DEFAULT_CAPACITY = 10;
 
