@@ -1,5 +1,6 @@
 package org.example;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Comparator;
 
@@ -124,7 +125,7 @@ public class MyArrayList <T>  {
      * @param index - получаемый для проверки индекс
      */
     private void checkIndex(int index) {
-        if (index < 0 || index >= size) {
+        if (index > size || index < 0) {
             throw new IndexOutOfBoundsException("Index: " + index + ", Size: " + size);
         }
     }
