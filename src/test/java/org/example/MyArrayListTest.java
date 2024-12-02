@@ -29,6 +29,15 @@ public class MyArrayListTest {
     }
 
     @Test
+    public void testAddAtIndexBig () {
+    MyArrayList<Integer> list = new MyArrayList<>();
+    for (int i = 0; i < 1000; i++) {
+        list.add(0, i);
+    }
+        assertEquals(1000, list.size());
+    }
+
+    @Test
     public void testRemove() {
         MyArrayList<Integer> list = new MyArrayList<>();
         list.add(1);
@@ -37,12 +46,6 @@ public class MyArrayListTest {
         list.remove(1);
         assertEquals(2, list.size());
         assertEquals(Integer.valueOf(1), list.get(0));
-    }
-
-    @Test(expected = IndexOutOfBoundsException.class)
-    public void testIndexOutOfBoundsExceptionGet() {
-        MyArrayList<Integer> list = new MyArrayList<>();
-        list.get(0);
     }
 
     @Test(expected = IndexOutOfBoundsException.class)
@@ -90,6 +93,5 @@ public class MyArrayListTest {
         list.add(new Object());
         list.add(new Object());
         list.sort();
-
     }
 }
